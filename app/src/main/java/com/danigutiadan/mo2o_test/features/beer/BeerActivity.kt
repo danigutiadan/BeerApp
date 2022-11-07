@@ -27,4 +27,11 @@ class BeerActivity : BaseActivity() {
         setSupportActionBar(binding.toolbar)
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
+
+    override fun showLoading() {
+
+    }
+
+    override fun hideLoading() {
+    }
 }

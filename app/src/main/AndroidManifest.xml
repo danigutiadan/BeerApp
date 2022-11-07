@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Mo2o_test"
         tools:targetApi="31">
         <activity
-            android:name=".BeerActivity"
+            android:name=".features.beer.BeerActivity"
             android:exported="false" />
         <activity
             android:name=".ui.BaseActivity"
