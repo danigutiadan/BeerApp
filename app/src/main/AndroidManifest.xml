@@ -4,6 +4,7 @@
     package="com.danigutiadan.mo2o_test">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,7 +15,10 @@
         android:theme="@style/Theme.Mo2o_test"
         tools:targetApi="31">
         <activity
-            android:name=".BaseActivity"
+            android:name=".BeerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.BaseActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
