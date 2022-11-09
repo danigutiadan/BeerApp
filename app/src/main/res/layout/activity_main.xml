@@ -14,10 +14,7 @@
         android:layout_centerVertical="true"
         android:text="Loading..."
         android:textColor="@color/white"
-        android:textSize="40sp"/>
-
-
-
+        android:textSize="40sp" />
 
 
 </RelativeLayout>

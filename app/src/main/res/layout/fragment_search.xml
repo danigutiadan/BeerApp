@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.beer.search.SearchFragment">
+    tools:context=".features.beer.search.ui.SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_back_chat_options" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_search_beer"
+        android:layout_below="@id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hola" />
+        android:layout_height="50dp" />
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search_beer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_search_beer" />
+
+</RelativeLayout>

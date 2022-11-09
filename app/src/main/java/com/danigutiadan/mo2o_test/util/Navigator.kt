@@ -11,7 +11,11 @@ class Navigator(private val context: Context) {
         navigateTo(activity, Intent(activity, BeerActivity::class.java), preserveStack)
 
 
-    private fun navigateTo(activity: FragmentActivity?, intent: Intent, preserveStack: Boolean? = true) =
+    private fun navigateTo(
+        activity: FragmentActivity?,
+        intent: Intent,
+        preserveStack: Boolean? = true
+    ) =
         if (preserveStack == true) {
             context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         } else {

@@ -1,4 +1,5 @@
 package com.danigutiadan.mo2o_test
+
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -38,7 +39,6 @@ class MainActivity : BaseActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             navigateToSearch()
         }, 1000)
-
 
 
     }

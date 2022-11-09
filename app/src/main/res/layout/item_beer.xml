@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_item_beer"
+        android:layout_width="50dp"
+        tools:src="@drawable/ic_launcher_background"
+        android:layout_height="50dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_marginStart="10dp"
+        android:id="@+id/tv_item_beer_title"
+        android:layout_width="wrap_content"
+        tools:text="Estrella galicia"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_item_beer"/>
+
+</RelativeLayout>

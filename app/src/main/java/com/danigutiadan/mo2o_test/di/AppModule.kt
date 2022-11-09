@@ -1,21 +1,23 @@
 package com.danigutiadan.mo2o_test.di
 
 import android.app.Application
-import com.danigutiadan.mo2o_test.api.AuthInterceptor
-import com.danigutiadan.mo2o_test.api.BeerClient
 import com.danigutiadan.mo2o_test.api.WebService
 import com.danigutiadan.mo2o_test.util.Navigator
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 import kotlin.coroutines.CoroutineContext
 
-@Module
+
+@Module(includes = [ViewModelModule::class])
 @InstallIn(SingletonComponent::class)
 class AppModule {
     @Provides
@@ -31,19 +33,24 @@ class AppModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
+        val interceptor = HttpLoggingInterceptor()
+        interceptor.apply { interceptor.level = HttpLoggingInterceptor.Level.BODY }
         return OkHttpClient.Builder()
-            .addInterceptor(AuthInterceptor())
+            .addInterceptor(interceptor)
             .build()
     }
 
     @Provides
     @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+    fun provideRetrofit(
+        okHttpClient: OkHttpClient,
+        converterFactory: GsonConverterFactory
+    ): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl("https://pokeapi.co/api/v2/")
-            //.addConverterFactory(MoshiConverterFactory.create())
-            //.addCallAdapterFactory(ApiResponseCallAdapterFactory.create())
+            .baseUrl("https://api.punkapi.com/v2/")
+
+            .addConverterFactory(converterFactory)
             .build()
     }
 
@@ -55,7 +62,10 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideBeerClient(webService: WebService): BeerClient {
-        return BeerClient(webService)
-    }
+    fun provideGsonConverterFactory(gson: Gson): GsonConverterFactory =
+        GsonConverterFactory.create(gson)
+
+    @Provides
+    @Singleton
+    fun provideGson(): Gson = Gson()
 }
