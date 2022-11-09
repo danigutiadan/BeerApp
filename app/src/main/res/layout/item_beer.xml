@@ -5,18 +5,58 @@
     android:layout_marginTop="10dp"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_item_beer"
-        android:layout_width="50dp"
-        tools:src="@drawable/ic_launcher_background"
-        android:layout_height="50dp" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_marginStart="10dp"
-        android:id="@+id/tv_item_beer_title"
-        android:layout_width="wrap_content"
-        tools:text="Estrella galicia"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_item_beer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/iv_item_beer"/>
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_item_beer"
+            android:layout_width="60dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_item_beer_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                tools:text="Estrella galicia" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_item_beer_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_item_beer_title"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:justificationMode="inter_word"
+                android:textColor="@color/black"
+                tools:text="A titillating, neurotic, peroxide punk of a Pale Ale. Combining attitude, style, substance, and a little bit of low self esteem for good measure; what would your mother say? The seductive lure of the sassy passion fruit hop proves too much to resist. All that is even before we get onto the fact that there are no additives, preservatives, pasteurization or strings attached. All wrapped up with the customary BrewDog bite and imaginative twist." />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/ll_item_beer"
+        android:layout_marginTop="10dp"
+
+        android:background="#c29648" />
 
 </RelativeLayout>

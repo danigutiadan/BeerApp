@@ -3,18 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".features.beer.search.ui.SearchFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/beer" />
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar_back_chat_options" />
+        layout="@layout/toolbar" />
 
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_search_beer"
-        android:layout_below="@id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:layout_below="@id/toolbar"
+        android:hint="Busca tu cerveza favorita"
+        android:inputType="textNoSuggestions"
+        android:textCursorDrawable="@null"
+        app:backgroundTint="@color/black" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_search_beer"

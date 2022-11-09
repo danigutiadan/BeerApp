@@ -10,14 +10,14 @@ fun bindImageFromUrl(view: ImageView, imageUrl: String?, placeholder: Int? = nul
             if (placeholder == null) {
                 Glide.with(view.context)
                         .load(imageUrl)
-                        .centerCrop()
+                        .fitCenter()
                         .transition(DrawableTransitionOptions.withCrossFade())
                         .into(view)
             } else {
                 Glide.with(view.context)
                         .load(imageUrl)
                         .placeholder(placeholder)
-                        .centerCrop()
+                        .fitCenter()
                         .transition(DrawableTransitionOptions.withCrossFade())
                         .into(view)
             }
@@ -25,7 +25,7 @@ fun bindImageFromUrl(view: ImageView, imageUrl: String?, placeholder: Int? = nul
             if (placeholder == null) {
                 Glide.with(view.context)
                         .load(imageUrl)
-                        .centerCrop()
+                        .fitCenter()
                         .circleCrop()
                         .transition(DrawableTransitionOptions.withCrossFade())
                         .into(view)
@@ -33,7 +33,7 @@ fun bindImageFromUrl(view: ImageView, imageUrl: String?, placeholder: Int? = nul
                 Glide.with(view.context)
                         .load(imageUrl)
                         .placeholder(placeholder)
-                        .centerCrop()
+                        .fitCenter()
                         .circleCrop()
                         .transition(DrawableTransitionOptions.withCrossFade())
                         .into(view)
@@ -44,13 +44,13 @@ fun bindImageFromUrl(view: ImageView, imageUrl: String?, placeholder: Int? = nul
             if (placeholder == null) {
                 Glide.with(view.context)
                         .load(imageUrl)
-                        .centerCrop()
+                        .fitCenter()
                         .transition(DrawableTransitionOptions.withCrossFade())
                         .into(view)
             } else {
                 Glide.with(view.context)
                         .load(imageUrl)
-                        .centerCrop()
+                        .fitCenter()
                         .placeholder(placeholder)
                         .transition(DrawableTransitionOptions.withCrossFade())
                         .into(view)
@@ -59,14 +59,14 @@ fun bindImageFromUrl(view: ImageView, imageUrl: String?, placeholder: Int? = nul
             if (placeholder == null) {
                 Glide.with(view.context)
                         .load(imageUrl)
-                        .centerCrop()
+                        .fitCenter()
                         .circleCrop()
                         .transition(DrawableTransitionOptions.withCrossFade())
                         .into(view)
             } else {
                 Glide.with(view.context)
                         .load(imageUrl)
-                        .centerCrop()
+                        .fitCenter()
                         .placeholder(placeholder)
                         .circleCrop()
                         .transition(DrawableTransitionOptions.withCrossFade())

@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_arrow_back.xml" value="0.304" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.252" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.21927083333333333" />
         <entry key="app/src/main/res/layout/activity_beer.xml" value="0.27708333333333335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.27708333333333335" />
+        <entry key="app/src/main/res/layout/fragment_beer_detail.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.23020833333333332" />
-        <entry key="app/src/main/res/layout/item_beer.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/item_beer.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_ingredient.xml" value="0.33" />
         <entry key="app/src/main/res/layout/toolbar_back_chat_options.xml" value="0.24635416666666668" />
       </map>
     </option>

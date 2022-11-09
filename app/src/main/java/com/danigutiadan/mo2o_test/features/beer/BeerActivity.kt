@@ -2,6 +2,7 @@ package com.danigutiadan.mo2o_test.features.beer
 
 
 import android.os.Bundle
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -29,9 +30,10 @@ class BeerActivity : BaseActivity() {
     }
 
     override fun showLoading() {
-
+        binding.progressBar.isVisible = true
     }
 
     override fun hideLoading() {
+        binding.progressBar.isVisible = false
     }
 }

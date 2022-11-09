@@ -274,60 +274,38 @@ data class AmountApi(
     override fun toModel() = Amount(value, unit)
 }
 
-data class Malt(
+data class Ingredient(
 
     var name: String? = null,
     var amount: Amount? = null
 
 ) : BaseModel() {
-    override fun toApi() = MaltApi(name, amount?.toApi())
+    override fun toApi() = IngredientApi(name, amount?.toApi())
 }
 
-data class MaltApi(
+data class IngredientApi(
 
     @SerializedName("name") var name: String? = null,
     @SerializedName("amount") var amount: AmountApi? = null
 
 ) : BaseApi() {
-    override fun toModel() = Malt(name, amount?.toModel())
-}
-
-data class Hops(
-
-    var name: String? = null,
-    var amount: Amount? = null,
-    var add: String? = null,
-    var attribute: String? = null
-
-) : BaseModel() {
-    override fun toApi() = HopsApi(name, amount?.toApi(), add, attribute)
-}
-
-data class HopsApi(
-
-    @SerializedName("name") var name: String? = null,
-    @SerializedName("amount") var amount: AmountApi? = null,
-    @SerializedName("add") var add: String? = null,
-    @SerializedName("attribute") var attribute: String? = null
-
-) : BaseApi() {
-    override fun toModel() = Hops(name, amount?.toModel(), add, attribute)
+    override fun toModel() = Ingredient(name, amount?.toModel())
 }
 
 data class Ingredients(
 
-    var malt: List<Malt>? = null,
-    var hops: List<Hops>? = null,
+    var malt: List<Ingredient>? = null,
+    var hops: List<Ingredient>? = null,
     var yeast: String? = null
 
 ) : BaseModel() {
     override fun toApi(): BaseApi? {
-        val maltApi = mutableListOf<MaltApi>()
+        val maltApi = mutableListOf<IngredientApi>()
         malt?.forEach {
             maltApi.add(it.toApi())
         }
 
-        val hopsApi = mutableListOf<HopsApi>()
+        val hopsApi = mutableListOf<IngredientApi>()
         hops?.forEach {
             hopsApi.add(it.toApi())
         }
@@ -338,18 +316,18 @@ data class Ingredients(
 
 data class IngredientsApi(
 
-    @SerializedName("malt") var malt: List<MaltApi>? = null,
-    @SerializedName("hops") var hops: List<HopsApi>? = null,
+    @SerializedName("malt") var malt: List<IngredientApi>? = null,
+    @SerializedName("hops") var hops: List<IngredientApi>? = null,
     @SerializedName("yeast") var yeast: String? = null
 
 ) : BaseApi() {
     override fun toModel(): BaseModel? {
-        val maltModel = mutableListOf<Malt>()
+        val maltModel = mutableListOf<Ingredient>()
         malt?.forEach {
             maltModel.add(it.toModel())
         }
 
-        val hopsModel = mutableListOf<Hops>()
+        val hopsModel = mutableListOf<Ingredient>()
         hops?.forEach {
             hopsModel.add(it.toModel())
         }

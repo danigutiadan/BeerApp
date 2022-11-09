@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".features.beer.BeerActivity">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -24,5 +25,15 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="50dp"
+        tools:visibility="visible"
+        android:visibility="invisible"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="50dp" />
 
 </RelativeLayout>

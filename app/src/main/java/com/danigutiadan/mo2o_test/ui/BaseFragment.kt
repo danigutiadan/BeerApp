@@ -30,6 +30,12 @@ abstract class BaseFragment(fragment: Int) : Fragment(fragment) {
     protected fun finish() =
         (activity as BaseActivity?)?.finish()
 
+    protected fun showLoading() =
+        (activity as BaseActivity?)?.showLoading()
+
+    protected fun hideLoading() =
+        (activity as BaseActivity?)?.hideLoading()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
